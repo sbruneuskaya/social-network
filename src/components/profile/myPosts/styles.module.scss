@@ -1,0 +1,25 @@
+.postsWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 5% 0;
+}
+
+.postsButton{
+  background: gainsboro;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+textarea{
+  padding: 10px;
+  border: 1px solid gainsboro;
+  width: 80%;
+  min-height: 100px;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+}

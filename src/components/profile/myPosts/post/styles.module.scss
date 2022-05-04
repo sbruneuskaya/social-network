@@ -1,0 +1,34 @@
+.avatar{
+  border-radius: 8px;
+  width: 80px;
+  max-height: 80px;
+}
+
+.postWrapper{
+  background: gainsboro;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.postInfo{
+  display: flex;
+}
+
+.postText{
+  padding: 15px;
+}
+
+.postLike{
+  display: flex;
+  justify-content: end;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.postLike span{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+}
