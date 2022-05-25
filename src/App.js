@@ -4,10 +4,10 @@ import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
 import NavBar from "./components/nav-bar/NavBar";
 import Chat from "./components/chat/Chat";
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
 
@@ -15,8 +15,9 @@ const App = () => {
                 <Header/>
                 <main className={styles.main}>
                     <NavBar/>
-                        <Route path='/profile' component={Profile} />
-                        <Route path='/Chat' component={Chat}/>
+                        <Route path='/profile' render={()=><Profile statePageProfile={props.stateApp.profilePage}
+                                                                    dispatch={props.dispatch}/>} />
+                        <Route path='/chat' render={()=> <Chat statePage={props.stateApp.chatPage}/>}/>
                 </main>
             </div>
 

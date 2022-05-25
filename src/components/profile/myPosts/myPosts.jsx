@@ -1,24 +1,46 @@
 import React from "react";
 import styles from './styles.module.scss';
 import Post from "./post/post";
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+import {addPost, updateNewPostText} from "../../../redux/state";
 
-const MyPosts = () => {
+
+// const addPost=()=>{
+//     return {type:'ADD-POST'}
+// }
+//
+// const updateNewPostText=(getValueRef)=>{
+//     return {type:'UPDATE-NEW-POST-TEXT', newText: getValueRef}
+// }
+
+const MyPosts = (props) => {
+    let createReg = React.createRef();
+    let createFunc = () => {
+        props.dispatch(addPost())
+
+    }
+    let onChangeValue = () => {
+        let getValueRef = createReg.current.value
+        props.dispatch(updateNewPostText(getValueRef))
+    }
+
     return (
         <div>
             My posts
             <div className={styles.postsWrapper}>
-                <textarea placeholder="Share with your network..."/>
-                <button className={styles.postsButton}>add post</button>
+                <textarea placeholder="Share with your network..." onChange={onChangeValue} ref={createReg} value={props.newPostMessage}
+                          />
+                <Stack direction="row" spacing={2}>
+                    <Button variant="contained" endIcon={<SendIcon/>} onClick={createFunc}>
+                        Send
+                    </Button>
+                </Stack>
             </div>
-            <Post mail='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
-                    literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem I
-                    psum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-                    Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-                    by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                    The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.'/>
-            <Post mail='Hello, it`s perfect post'/>
-            <Post mail='ahahahahahaha'/>
+            {props.posts.map(el =>
+                <Post mail={el.mail}/>
+            )}
         </div>
     )
 }

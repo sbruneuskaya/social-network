@@ -1,16 +1,16 @@
 .postsWrapper{
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin: 5% 0;
 }
 
 .postsButton{
   background: gainsboro;
-  border: none;
-  padding: 5px 20px;
-  border-radius: 8px;
-  font-weight: 700;
+  //border: none;
+  //padding: 5px 20px;
+  //border-radius: 8px;
+  //font-weight: 700;
   cursor: pointer;
 }
 

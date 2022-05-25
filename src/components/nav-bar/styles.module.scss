@@ -1,4 +1,4 @@
-.nav{
+.nav {
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -8,16 +8,28 @@
   padding: 9.5% 0;
 }
 
-.item{
-  color: black;
-  font-family: 'Avenir Next';
-  font-weight: bold;
-  text-decoration: none;
+.navItem {
+  margin-bottom: 15px;
+  width: 100%;
+  min-height: 40px;
+
 }
 
-.active{
-  color: white;
-  background: green;
+.item {
+  color: black;
+  font-family: 'Avenir Next', serif;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 5px 15px 5px 80px;
+}
+
+
+.active {
+  color: black;
+  background: white;
   width: 200px;
   height: 200px;
+  border-radius: 0 15px 15px 0;
+
 }

@@ -1,25 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import styles from './styles.module.scss';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const Post = (props) => {
-    const [count, setCount]= useState(null)
-
-    const counter =()=>{
-
-        setCount(()=>count+1)
-
-        // if(count===null){
-        //     setCount(()=>count+1)
-        // }else{
-        //     setCount(()=>count-1)
-        // }
-
-    }
-
-    useEffect(()=>{
-
-    }, [count])
 
     return (
         <div className={styles.postWrapper}>
@@ -30,9 +13,8 @@ const Post = (props) => {
                 </div>
             </div>
             <div className={styles.postLike}>
-                <span onClick={counter}>
+                <span>
                     <FavoriteBorderIcon />
-                    {count}
                 </span>
             </div>
         </div>

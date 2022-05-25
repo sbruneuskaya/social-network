@@ -1,0 +1,63 @@
+.wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.users{
+  width: 30%;
+  //background: red;
+}
+
+.message{
+  width: 65%;
+  background: #efefef;
+}
+
+.active{
+  background-color: #efefef;
+}
+
+.usersItem{
+  font-family: 'Abhaya Libre', serif;
+  color: #88898a;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.users h2{
+  font-family: 'Abhaya Libre', serif;
+  font-size: 20px;
+  color: #88898a;
+  font-weight: 700;
+  padding-left: 15px;
+}
+
+.users input{
+  font-family: 'Abhaya Libre', serif;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  background: #f4f4f4;
+  color: #848484 !important;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.messageItem{
+  background: white;
+  width: fit-content;
+  margin: 10px;
+  border-radius: 8px;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 15px;
+  line-height: 22px;
+  padding: 10px 35px 10px 35px;
+
+}

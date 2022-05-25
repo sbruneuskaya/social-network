@@ -2,7 +2,7 @@ import React from "react";
 import styles from './styles.module.scss';
 import MyPosts from "./myPosts/myPosts";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={styles.content}>
             <div className={styles.contentImg}>
@@ -13,7 +13,9 @@ const Profile = () => {
             <div>
                 avatar+description
             </div>
-            <MyPosts/>
+            <MyPosts posts={props.statePageProfile.posts}
+                     newPostMessage={props.statePageProfile.newPostText}
+                     dispatch={props.dispatch}/>
         </div>
     )
 }

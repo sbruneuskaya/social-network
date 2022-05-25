@@ -1,21 +1,24 @@
 import React from "react";
 import styles from './styles.module.scss';
-import classNames from "classnames";
+import UserItem from "./userItem/UserItem";
+import MessageItem from "./messageItem/MessageItem";
 
-const Chat=()=>{
-    return(
-        <div>
+
+
+const Chat = (props) => {
+    return (
+        <div className={styles.wrapper}>
             <div className={styles.users}>
-                <div className={styles.usersItem}>Ваня</div>
-                <div className={classNames(styles.usersItem, styles.active)}>Катя</div>
-                <div className={styles.usersItem}>Оля</div>
-                <div className={styles.usersItem}>Марго</div>
-                <div className={styles.usersItem}>Рома</div>
+                <h2>Chats</h2>
+                <input type={"search"} placeholder={'search'}/>
+                {props.statePage.user.map(item =>
+                        <UserItem name={item.name} id={item.id}/>
+                )}
             </div>
             <div className={styles.message}>
-                <div className={styles.messageItem}>Привет</div>
-                <div className={styles.messageItem}>Я улетаю на море</div>
-                <div className={styles.messageItem}>И собираюсь посадить тую</div>
+                {props.statePage.messages.map(el=>
+                    <MessageItem message={el.message}/>
+                )}
             </div>
         </div>
     )
