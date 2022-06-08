@@ -15,9 +15,9 @@ const App = (props) => {
                 <Header/>
                 <main className={styles.main}>
                     <NavBar/>
-                        <Route path='/profile' render={()=><Profile statePageProfile={props.stateApp.profilePage}
+                        <Route path='/profile' render={()=><Profile statePageProfile={props.state.profilePage}
                                                                     dispatch={props.dispatch}/>} />
-                        <Route path='/chat' render={()=> <Chat statePage={props.stateApp.chatPage}/>}/>
+                        <Route path='/chat' render={()=> <Chat store={props.store}/>}/>
                 </main>
             </div>
 

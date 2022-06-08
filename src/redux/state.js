@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+import profileReducer from "./profileReducer";
+import chatReducer from "./chatReducer";
 
 
 let store = {
@@ -40,7 +40,8 @@ let store = {
                     id: 3,
                     message: 'И собираюсь посадить тую'
                 },
-            ]
+            ],
+            newChatText: '',
         },
         profilePage: {
             posts: [
@@ -75,49 +76,18 @@ let store = {
     _getNewSubscriber() {
         console.log('state changed')
     },
-    // addPost() {
-    //     let newPost = {
-    //         id: 6,
-    //         mail: this._state.profilePage.newPostText
-    //     }
-    //     this._state.profilePage.posts.push(newPost)
-    //     this._state.profilePage.newPostText = '';
-    //     this._getNewSubscriber(this._state)
-    // },
-    // updatePostText(newText) {
-    //     this._state.profilePage.newPostText = newText;
-    //     this._getNewSubscriber(this._state)
-    // },
     subscribe(observer) {
         this._getNewSubscriber = observer;
     },
 
-    dispatch(action){
-        if(action.type==='ADD-POST'){
-            let newPost = {
-                id: 6,
-                mail: this._state.profilePage.newPostText
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = '';
-            this._getNewSubscriber(this._state)
-        }else if(action.type==='UPDATE-NEW-POST-TEXT'){
-            this._state.profilePage.newPostText = action.newText;
-            this._getNewSubscriber(this._state)
-        }
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.chatPage = chatReducer(this._state.chatPage, action)
+        this._getNewSubscriber(this._state)
     }
 }
 
-export const addPost=()=>{
-    return {type: ADD_POST}
-}
-
-export const updateNewPostText=(getValueRef)=>{
-    return {type: UPDATE_NEW_POST_TEXT, newText: getValueRef}
-}
-
 export default store;
-
 
 
 window.store = store
