@@ -2,7 +2,7 @@ import React from "react";
 import styles from './styles.module.scss';
 import UserItem from "./userItem/UserItem";
 import MessageItem from "./messageItem/MessageItem";
-import {addSendMessage, updateNewChatText} from "../../redux/actionCreator";
+
 
 
 const Chat = (props) => {
