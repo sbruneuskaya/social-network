@@ -5,6 +5,7 @@ import Profile from "./components/profile/Profile";
 import NavBar from "./components/nav-bar/NavBar";
 import Chat from "./components/chat/Chat";
 import {BrowserRouter, Route} from 'react-router-dom';
+import ChatContainer from "./components/chat/ChatContainer";
 
 
 const App = (props) => {
@@ -15,9 +16,8 @@ const App = (props) => {
                 <Header/>
                 <main className={styles.main}>
                     <NavBar/>
-                        <Route path='/profile' render={()=><Profile statePageProfile={props.state.profilePage}
-                                                                    dispatch={props.dispatch}/>} />
-                        <Route path='/chat' render={()=> <Chat store={props.store}/>}/>
+                        <Route path='/profile' render={()=><Profile store={props.store}/>} />
+                        <Route path='/chat' render={()=> <ChatContainer store={props.store}/>}/>
                 </main>
             </div>
 

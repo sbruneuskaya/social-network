@@ -1,6 +1,8 @@
 import React from "react";
 import styles from './styles.module.scss';
-import MyPosts from "./myPosts/myPosts";
+// import MyPosts from "./myPosts/myPosts";
+import MyPostsContainer from "./myPosts/myPostsContainer";
+// import './../../redux/store'
 
 const Profile = (props) => {
     return (
@@ -13,9 +15,7 @@ const Profile = (props) => {
             <div>
                 avatar+description
             </div>
-            <MyPosts posts={props.statePageProfile.posts}
-                     newPostMessage={props.statePageProfile.newPostText}
-                     dispatch={props.dispatch}/>
+            <MyPostsContainer store={props.store} />
         </div>
     )
 }

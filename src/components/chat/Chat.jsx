@@ -6,14 +6,15 @@ import {addSendMessage, updateNewChatText} from "../../redux/actionCreator";
 
 
 const Chat = (props) => {
-    let state = props.store.getState().chatPage
+    let state = props.chatPage
+
     const onSendMessageClick = () => {
-        props.store.dispatch(addSendMessage())
+        props.addSendMessage()
     }
 
     const onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewChatText(body))
+        props.updateNewChatText(body)
     }
     return (
         <div className={styles.wrapper}>
